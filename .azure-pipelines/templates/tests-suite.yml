@@ -10,7 +10,7 @@ jobs:
       vmImage: $(IMAGE_NAME)
     steps:
     - bash: openssl version
-      displayName: Get openssl version
+      displayname: Get openssl version
     - bash: brew install augeas
       condition: startswith(variables['image_name'], 'macos')
       displayname: install augeas
