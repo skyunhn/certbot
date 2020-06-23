@@ -9,9 +9,11 @@ jobs:
     pool:
       vmImage: $(IMAGE_NAME)
     steps:
+    - bash: openssl version
+      displayName: Get openssl version
     - bash: brew install augeas
-      condition: startswith(variables['IMAGE_NAME'], 'macOS')
-      displayName: Install Augeas
+      condition: startswith(variables['image_name'], 'macos')
+      displayname: install augeas
     - task: UsePythonVersion@0
       inputs:
         versionSpec: $(PYTHON_VERSION)
