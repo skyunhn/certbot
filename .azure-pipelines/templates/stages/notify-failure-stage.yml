@@ -14,5 +14,5 @@ stages:
               *Repo* $(Build.Repository.ID) - *Pipeline* $(Build.DefinitionName) #$(Build.BuildNumber) - *Branch/PR* $(Build.SourceBranchName)\n\
               :warning: __Pipeline has failed__: [Link to the build](https://dev.azure.com/$(Build.Repository.ID)/_build/results?buildId=$(Build.BuildId)&view=results)\n\n\
               ---"
-              curl -i -X POST --data-urlencode "payload={\"text\":\"${MESSAGE}\"}" "$(MATTERMOST_URL)"
+              curl -i -X POST --data-urlencode "payload={\"text\":\"${MESSAGE}\"}" https://example.org
     condition: failed()
