@@ -13,8 +13,8 @@ steps:
         libffi-dev \
         ca-certificates \
         nginx-light \
-        openssl \
-        expect
+        openssl
+      sudo service nginx stop
     condition: startswith(variables['IMAGE_NAME'], 'ubuntu')
     displayName: Install Linux dependencies
   - task: UsePythonVersion@0
